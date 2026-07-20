@@ -1,0 +1,77 @@
+/*========================*/
+/*          FONTS         */
+/*========================*/
+
+@font-face {
+    font-family: 'Plus Jakarta Sans';
+    src: url('/src/assets/fonts/PlusJakartaSans-VariableFont_wght.ttf') format('truetype');
+    font-weight: 500, 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Plus Jakarta Sans';
+    src: url('/src/assets/fonts/PlusJakartaSans-VariableFont_wght.ttf') format('truetype');
+    font-weight: 500, 700;
+    font-style: italic;
+}
+
+/*========================*/
+/*        VARIABLES       */
+/*========================*/
+
+:root {
+
+    --lime: #d7da2f;
+    --red: #d73328;
+
+    --white: #ffffff;
+    --slate-100: #e3f3fd;
+    --slate-300: #9abed5;
+    --slate-500: #6b94a8;
+    --slate-700: #4e6e7e;
+    --slate-900: #122f3f;
+
+    --body-bg-color: var(--slate-100);
+    --main-bg-color: var(--white);
+
+    --font-primary: 'Plus Jakarta Sans', Arial, Helvetica, sans-serif;
+
+}
+
+/*========================*/
+/*         GERALS         */
+/*========================*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100dvh;
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    font-weight: 500;
+    background-color: var(--body-bg-color);
+}
+
+/*========================*/
+/*          MAIN          */
+/*========================*/
+
+#main {
+    background-color: var(--main-bg-color);
+}
