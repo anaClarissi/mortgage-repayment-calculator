@@ -38,7 +38,17 @@
               
                 <label for="amount">Mortgage Amount</label>
 
-                <input type="number" name="amount" id="amount">
+                <div class="input-content reverse">
+
+                  <input type="number" name="amount" id="amount">
+                  
+                  <div class="input-symbol">
+                    
+                    <span>£</span>
+                    
+                  </div>
+
+                </div>
 
               </div>
             
@@ -50,7 +60,17 @@
                 
                 <label for="year-term">Mortgage Term</label>
                 
-                <input type="number" name="year-term" id="year-term">
+                <div class="input-content">
+
+                  <input type="number" name="year-term" id="year-term">
+                  
+                  <div class="input-symbol">
+                  
+                    <span>years</span>
+                    
+                  </div>
+                  
+                </div>
               
               </div>
 
@@ -58,7 +78,17 @@
                 
                 <label for="interest-rate">Interest Rate</label>
 
-                <input type="number" name="interest-rate" id="interest-rate">              
+                <div class="input-content">
+                  
+                  <input type="number" name="interest-rate" id="interest-rate">  
+
+                  <div class="input-symbol">
+
+                    <span>%</span>
+
+                  </div>
+                
+                </div>            
               
               </div>
 
@@ -68,25 +98,35 @@
 
               <legend>Mortgage Type</legend>
 
-              <div class="radio-col">
+              <div class="radio-content">
 
-                <input type="radio" name="mortgage-type" id="repayment">
-                
-                <label for="repayment">Repayment</label>
-              
-              </div>
+                <label class="radio-col">
 
-              <div class="radio-col">
- 
-                <input type="radio" name="mortgage-type" id="interest">
+                  <input type="radio" name="mortgage-type" id="repayment">
+
+                  Repayment
                 
-                <label for="interest">Interest Only</label>
-              
+                </label>
+                
+                <label class="radio-col">
+
+                  <input type="radio" name="mortgage-type" id="interest">
+
+                  Interest Only
+
+                </label>
+
               </div>
 
             </fieldset>
 
-            <button type="submit" class="btn btn-calculate">Calculate Repayments</button>
+            <button type="submit" class="btn btn-calculate">
+
+              <img src="/src/assets/images/icon-calculator.svg" alt="" class="btn-calculate-img" aria-hidden="true">
+              
+              Calculate Repayments
+            
+            </button>
 
           </div>
 
@@ -96,16 +136,13 @@
 
       <section class="result-section">
 
-        <div class="result-empty-container">
+        <div class="result-empty-container active">
 
           <img src="/src/assets/images/illustration-empty.svg" alt="" class="empty-img" aria-hidden="true">
 
           <h2 class="title">Results shown here</h2>
 
-          <p class="subtitle">
-            Complete the form and click “calculate repayments” to see what
-            your monthly repayments would be.
-          </p>
+          <p class="subtitle">Complete the form and click “calculate repayments” to see what your monthly repayments would be.</p>
           
         </div>
 
@@ -132,7 +169,7 @@
 
               <p class="repayment-label" id="total-repayment-label">Total you'll repay over the term</p>
 
-              <h3 class="total-repayment" aria-labelledby="total-repayment-label"></h3>
+              <h3 class="total-repayment" aria-labelledby="total-repayment-label">234234</h3>
 
             </div>
 
