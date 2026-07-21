@@ -105,14 +105,15 @@ body {
 
 #main {
     background-color: var(--main-bg-color);
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.05);
 }
 
 .main-container {
-    min-height: 100dvh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 0;
+    min-height: 100dvh;
 }
 
 /*========================*/
@@ -320,11 +321,13 @@ input[type="radio"]:checked::before {
 /*========================*/
 
 .result-empty-container {
+    width: 100%;
+    height: 100%;
     align-items: center;
     justify-content: center;
 }
 
-.result-completed-container .subtitle {
+.result-empty-container .subtitle {
     text-align: center;
 }
 
@@ -380,4 +383,105 @@ input[type="radio"]:checked::before {
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--total-repayment-text-color);
+}
+
+/*================================*/
+/*        ---- DESKTOP ----       */
+/*================================*/
+
+@media (min-width: 60em) {
+
+    /*========================*/
+    /*          MAIN          */
+    /*========================*/
+
+    #main {
+        border-radius: 2rem;
+        overflow: hidden;
+        max-width: 70em;
+    }
+
+    .main-container {
+        flex-direction: row;
+        min-height: auto;
+    }
+
+    .form-section,
+    .result-section {
+        flex: 1;
+    }
+
+    /*========================*/
+    /*          FORM          */
+    /*========================*/
+
+    .form-container {
+        gap: 1.5rem;
+        padding: clamp(1.500rem, calc(-1.500rem + 5vw), 2.500rem);
+    }
+
+    .form-header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: clamp(0.000rem, calc(-3.000rem + 5vw), 1.000rem);
+    }
+
+    .form-header .title {
+        font-size: clamp(1.25rem, calc(-0.25rem + 2.5vw), 1.75rem); /* 960px to 1280px */
+    }
+
+    .form-row:nth-child(3) {
+        grid-template-columns: 1fr 1fr;
+        column-gap: 1.5rem;
+    }
+
+    label,
+    legend {
+        font-size: clamp(1rem, calc(0.25rem + 1.25vw), 1.25rem); /* 960px to 1280px */
+    }
+
+    .btn-calculate {
+        max-width: 80%;
+        margin-top: clamp(0.000rem, calc(-4.500rem + 7.5vw), 1.500rem);
+    }
+
+    /*========================*/
+    /*      RESULT SECTION    */
+    /*========================*/
+
+    .result-section {
+        border-bottom-left-radius: 6rem;
+    }
+
+    .result-empty-container,
+    .result-completed-container  {
+        padding: clamp(2.000rem, calc(-1.000rem + 5vw), 3.000rem);
+    }
+
+    /*========================*/
+    /*       RESULT EMPTY     */
+    /*========================*/
+
+    .empty-img {
+        width: 50%;
+    }
+
+    /*========================*/
+    /*     RESULT COMPLETED   */
+    /*========================*/
+
+    .result-completed-repayment {
+        margin-top: 2rem;
+        padding: 2rem;
+    }
+
+    .monthly-repayment {
+        font-size: 3.25rem;
+    }
+
+    .total-repayment {
+        font-size: 2rem;
+    }
+
 }
