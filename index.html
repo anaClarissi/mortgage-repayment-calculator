@@ -1,190 +1,160 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Mortgage Repayment Calculator Website">
-  <meta name="keywords" content="html, css, javascript, sass, bootstrap">
-  <meta name="author" content="Ana Clarissi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Mortgage Repayment Calculator Website" />
+    <meta name="keywords" content="html, css, javascript, sass, bootstrap" />
+    <meta name="author" content="Ana Clarissi" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Mortgage repayment calculator</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
 
-</head>
-<body>
+    <title>Frontend Mentor | Mortgage repayment calculator</title>
+  </head>
+  <body>
+    <main id="main">
+      <div class="container main-container">
+        <section class="form-section">
+          <form class="form">
+            <div class="form-container">
+              <div class="form-header">
+                <h1 class="title">Mortgage Calculator</h1>
 
-  <main id="main">
+                <button type="button" class="btn btn-clear-all">
+                  Clear All
+                </button>
+              </div>
 
-    <div class="container main-container">
+              <div class="form-row">
+                <div class="form-col">
+                  <label for="amount">Mortgage Amount</label>
 
-      <section class="form-section">
+                  <div class="input-content reverse">
+                    <input type="number" name="amount" id="amount" />
 
-        <form class="form">
-
-          <div class="form-container">
-
-            <div class="form-header">
-
-              <h1 class="title">Mortgage Calculator</h1>
-
-              <button type="button" class="btn btn-clear-all">Clear All</button>
-
-            </div>
-
-            <div class="form-row">
-
-              <div class="form-col">
-              
-                <label for="amount">Mortgage Amount</label>
-
-                <div class="input-content reverse">
-
-                  <input type="number" name="amount" id="amount">
-                  
-                  <div class="input-symbol">
-                    
-                    <span>£</span>
-                    
+                    <div class="input-symbol">
+                      <span>£</span>
+                    </div>
                   </div>
+                </div>
+              </div>
 
+              <div class="form-row">
+                <div class="form-col">
+                  <label for="year-term">Mortgage Term</label>
+
+                  <div class="input-content">
+                    <input type="number" name="year-term" id="year-term" />
+
+                    <div class="input-symbol">
+                      <span>years</span>
+                    </div>
+                  </div>
                 </div>
 
-              </div>
-            
-            </div>
+                <div class="form-col">
+                  <label for="interest-rate">Interest Rate</label>
 
-            <div class="form-row">
+                  <div class="input-content">
+                    <input
+                      type="number"
+                      name="interest-rate"
+                      id="interest-rate"
+                    />
 
-              <div class="form-col">
-                
-                <label for="year-term">Mortgage Term</label>
-                
-                <div class="input-content">
-
-                  <input type="number" name="year-term" id="year-term">
-                  
-                  <div class="input-symbol">
-                  
-                    <span>years</span>
-                    
+                    <div class="input-symbol">
+                      <span>%</span>
+                    </div>
                   </div>
-                  
                 </div>
-              
               </div>
 
-              <div class="form-col">
-                
-                <label for="interest-rate">Interest Rate</label>
+              <fieldset>
+                <legend>Mortgage Type</legend>
 
-                <div class="input-content">
-                  
-                  <input type="number" name="interest-rate" id="interest-rate">  
+                <div class="radio-content">
+                  <label class="radio-col">
+                    <input type="radio" name="mortgage-type" id="repayment" />
 
-                  <div class="input-symbol">
+                    Repayment
+                  </label>
 
-                    <span>%</span>
+                  <label class="radio-col">
+                    <input type="radio" name="mortgage-type" id="interest" />
 
-                  </div>
-                
-                </div>            
-              
-              </div>
+                    Interest Only
+                  </label>
+                </div>
+              </fieldset>
 
+              <button type="submit" class="btn btn-calculate">
+                <img
+                  src="/src/assets/images/icon-calculator.svg"
+                  alt=""
+                  class="btn-calculate-img"
+                  aria-hidden="true"
+                />
+
+                Calculate Repayments
+              </button>
             </div>
+          </form>
+        </section>
 
-            <fieldset>
+        <section class="result-section">
+          <div class="result-empty-container active">
+            <img
+              src="/src/assets/images/illustration-empty.svg"
+              alt=""
+              class="empty-img"
+              aria-hidden="true"
+            />
 
-              <legend>Mortgage Type</legend>
+            <h2 class="title">Results shown here</h2>
 
-              <div class="radio-content">
-
-                <label class="radio-col">
-
-                  <input type="radio" name="mortgage-type" id="repayment">
-
-                  Repayment
-                
-                </label>
-                
-                <label class="radio-col">
-
-                  <input type="radio" name="mortgage-type" id="interest">
-
-                  Interest Only
-
-                </label>
-
-              </div>
-
-            </fieldset>
-
-            <button type="submit" class="btn btn-calculate">
-
-              <img src="/src/assets/images/icon-calculator.svg" alt="" class="btn-calculate-img" aria-hidden="true">
-              
-              Calculate Repayments
-            
-            </button>
-
+            <p class="subtitle">
+              Complete the form and click “calculate repayments” to see what
+              your monthly repayments would be.
+            </p>
           </div>
 
-        </form>
-        
-      </section>
+          <div class="result-completed-container" aria-live="polite" hidden>
+            <h2 class="title">Your results</h2>
 
-      <section class="result-section">
+            <p class="subtitle">
+              Your results are shown below based on the information you
+              provided. To adjust the results, edit the form and click
+              “calculate repayments” again.
+            </p>
 
-        <div class="result-empty-container active">
+            <div class="result-completed-repayment">
+              <div class="repayment-content primary">
+                <p class="repayment-label" id="monthly-repayment-label">
+                  Your monthly repayments
+                </p>
 
-          <img src="/src/assets/images/illustration-empty.svg" alt="" class="empty-img" aria-hidden="true">
+                <h3
+                  class="monthly-repayment"
+                  aria-labelledby="monthly-repayment-label"
+                ></h3>
+              </div>
 
-          <h2 class="title">Results shown here</h2>
+              <div class="repayment-content secundary">
+                <p class="repayment-label" id="total-repayment-label">
+                  Total you'll repay over the term
+                </p>
 
-          <p class="subtitle">Complete the form and click “calculate repayments” to see what your monthly repayments would be.</p>
-          
-        </div>
-
-        <div class="result-completed-container" aria-live="polite" hidden>
-          
-          <h2 class="title">Your results</h2>
-
-          <p class="subtitle">
-            Your results are shown below based on the information you provided.
-            To adjust the results, edit the form and click “calculate repayments” again.
-          </p>
-
-          <div class="result-completed-repayment">
-
-            <div class="repayment-content primary">
-
-              <p class="repayment-label" id="monthly-repayment-label">Your monthly repayments</p>
-
-              <h3 class="monthly-repayment" aria-labelledby="monthly-repayment-label"></h3>
-
+                <h3
+                  class="total-repayment"
+                  aria-labelledby="total-repayment-label"
+                ></h3>
+              </div>
             </div>
-
-            <div class="repayment-content secundary">
-
-              <p class="repayment-label" id="total-repayment-label">Total you'll repay over the term</p>
-
-              <h3 class="total-repayment" aria-labelledby="total-repayment-label"></h3>
-
-            </div>
-
           </div>
-          
-        </div>
+        </section>
+      </div>
+    </main>
 
-        
-      </section>
-
-    </div>
-
-  </main>
-
-  <script type="module" src="/src/js/main.js"></script>
-  
-</body>
+    <script type="module" src="/src/js/main.js"></script>
+  </body>
 </html>

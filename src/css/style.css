@@ -24,6 +24,7 @@
 
     --lime: #d7da2f;
     --lime-50: #d7da2f30;
+    --lime-100: #d7da2f70;
     --red: #d73328;
 
     --white: #ffffff;
@@ -40,6 +41,7 @@
 
     --form-header-title: var(--slate-900);
     --clear-all-text-color: var(--slate-700);
+    --clear-all-hover-color: var(--slate-900);
 
     --label-color: var(--slate-700);
     --radios-label-color: var(--slate-900);
@@ -54,6 +56,7 @@
     --radio-checked-border-color: var(--lime);
 
     --btn-calculate-bg-color: var(--lime);
+    --btn-calculate-hover-bg-color: var(--lime-100);
     --btn-calculate-text-color: var(--slate-900);
 
     --result-section-bg-color: var(--slate-900);
@@ -153,6 +156,17 @@ body {
     border-bottom: 1px solid;
 }
 
+.btn-clear-all:hover,
+.btn-clear-all:focus {
+    color: var(--clear-all-hover-color);
+    border-bottom: 2px solid var(--clear-all-hover-color);
+}
+
+.btn-clear-all:focus {
+    outline: 1px solid var(--clear-all-hover-color);
+    outline-offset: 4px;
+}
+
 .form-row {
     display: grid;
     grid-template-columns: 1fr;
@@ -190,6 +204,9 @@ fieldset {
     border-radius: 0.3rem;
     border: 1px solid var(--inputs-border-color);
     overflow: hidden;
+    cursor: pointer;
+    outline: 0px solid var(--inputs-border-color);
+    transition: all .2s ease-in-out;
 }
 
 .radio-col {
@@ -199,6 +216,12 @@ fieldset {
     font-size: 1.15rem;
     font-weight: 700;
     color: var(--radios-label-color);
+    transition: all .2s ease-in-out;
+}
+
+.radio-col:hover,
+.radio-col.radio-col:has(input[type="radio"]:focus) {
+    border-color: var(--radio-checked-border-color);
 }
 
 .input-content.reverse {
@@ -212,13 +235,16 @@ fieldset {
     font-weight: 700;
     color: var(--inputs-text-color);
     padding-left: 1rem;
+    cursor: pointer;
 }
 
+.input-content input:hover,
 .input-content input:focus {
     border: none;
     outline: none;
 }
 
+.input-content:hover ,
 .input-content:has(input:focus) {
     outline: 1px solid var(--inputs-border-color);
 }
@@ -232,6 +258,13 @@ fieldset {
     color: var(--inputs-symbol-text-color);
     background-color: var(--inputs-symbol-bg-color);
 }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 
 input[type="radio"] {
     -webkit-appearance: none;
@@ -266,6 +299,10 @@ input[type="radio"]:checked::before {
     display: block;
 }
 
+input[type="radio"]:focus {
+    outline: none;
+}
+
 .radio-col:has(input[type="radio"]:checked) {
     border: 1px solid var(--radio-checked-border-color);
     background-color: var(--radio-checked-label-bg-color);
@@ -284,6 +321,15 @@ input[type="radio"]:checked::before {
     background-color: var(--btn-calculate-bg-color);
 }
 
+.btn-calculate:hover,
+.btn-calculate:focus {
+    background-color: var(--btn-calculate-hover-bg-color);
+}
+
+.btn-calculate:focus {
+    outline: 2px solid var(--btn-calculate-hover-bg-color);
+    outline-offset: 4px;
+}
 
 /*========================*/
 /*      RESULT SECTION    */
