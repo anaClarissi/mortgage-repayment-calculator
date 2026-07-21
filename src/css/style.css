@@ -238,6 +238,16 @@ fieldset {
     cursor: pointer;
 }
 
+.input-content.reverse:has(input:not(:placeholder-shown)) {
+    border-color: var(--lime);
+}
+
+.input-content.reverse:has(input:not(:placeholder-shown)):hover,
+.input-content.reverse:has(input:not(:placeholder-shown)):focus {
+    border-color: var(--inputs-border-color);
+    outline: 1px solid var(--inputs-border-color);
+}
+
 .input-content input:hover,
 .input-content input:focus {
     border: none;
@@ -257,6 +267,11 @@ fieldset {
     font-weight: 700;
     color: var(--inputs-symbol-text-color);
     background-color: var(--inputs-symbol-bg-color);
+}
+
+.input-content.reverse:has(input:not(:placeholder-shown)) .input-symbol {
+    color: var(--slate-900);
+    background-color: var(--lime);
 }
 
 input::-webkit-outer-spin-button,
