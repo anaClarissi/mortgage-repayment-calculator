@@ -59,6 +59,11 @@
     --btn-calculate-hover-bg-color: var(--lime-100);
     --btn-calculate-text-color: var(--slate-900);
 
+    --error-text-color: var(--red);
+    --error-input-border-color: var(--red);
+    --error-input-bg-color: var(--red);
+    --error-input-symbol-color: var(--white);
+
     --result-section-bg-color: var(--slate-900);
     --result-section-title-color: var(--white);
     --result-section-text-color: var(--slate-300);
@@ -344,6 +349,30 @@ input[type="radio"]:focus {
 .btn-calculate:focus {
     outline: 2px solid var(--btn-calculate-hover-bg-color);
     outline-offset: 4px;
+}
+
+/*========================*/
+/*      ERROR MESSAGE     */
+/*========================*/
+
+.error-message {
+    display: none;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--error-text-color);
+}
+
+.error-message.show {
+    display: block;
+}
+
+.form-col:has(.error-message.show) .input-content{
+    border-color: var(--error-input-border-color);
+}
+
+.form-col:has(.error-message.show) .input-symbol {
+    color: var(--error-input-symbol-color);
+    background-color: var(--error-input-bg-color);
 }
 
 /*========================*/

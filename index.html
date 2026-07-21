@@ -15,12 +15,12 @@
     <main id="main">
       <div class="container main-container">
         <section class="form-section">
-          <form class="form">
+          <form class="form" novalidate>
             <div class="form-container">
               <div class="form-header">
                 <h1 class="title">Mortgage Calculator</h1>
 
-                <button type="button" class="btn btn-clear-all">
+                <button type="reset" class="btn btn-clear-all">
                   Clear All
                 </button>
               </div>
@@ -30,12 +30,21 @@
                   <label for="amount">Mortgage Amount</label>
 
                   <div class="input-content reverse">
-                    <input type="number" name="amount" id="amount" placeholder="" />
+                    <input 
+                      type="number" 
+                      name="amount" 
+                      id="amount" 
+                      placeholder="" 
+                      aria-describedby="amount-error" 
+                      aria-invalid="false"
+                      required />
 
                     <div class="input-symbol">
                       <span>£</span>
                     </div>
                   </div>
+
+                  <p id="amount-error" class="error-message" aria-live="polite">This field is required</p>
                 </div>
               </div>
 
@@ -44,12 +53,20 @@
                   <label for="year-term">Mortgage Term</label>
 
                   <div class="input-content">
-                    <input type="number" name="year-term" id="year-term" />
+                    <input 
+                      type="number" 
+                      name="year-term" 
+                      id="year-term" 
+                      aria-describedby="year-term-error"
+                      aria-invalid="false"
+                      required/>
 
                     <div class="input-symbol">
                       <span>years</span>
                     </div>
                   </div>
+
+                  <p id="year-term-error" class="error-message" aria-live="polite">This field is required</p>
                 </div>
 
                 <div class="form-col">
@@ -60,31 +77,38 @@
                       type="number"
                       name="interest-rate"
                       id="interest-rate"
+                      aria-describedby="interest-rate-error"
+                      aria-invalid="false"
+                      required
                     />
 
                     <div class="input-symbol">
                       <span>%</span>
                     </div>
                   </div>
+
+                  <p id="interest-rate-error" class="error-message" aria-live="polite">This field is required</p>
                 </div>
               </div>
 
-              <fieldset>
+              <fieldset aria-describedby="mortgage-type-error">
                 <legend>Mortgage Type</legend>
 
                 <div class="radio-content">
                   <label class="radio-col">
-                    <input type="radio" name="mortgage-type" id="repayment" />
+                    <input type="radio" name="mortgage-type" id="repayment" required />
 
                     Repayment
                   </label>
 
                   <label class="radio-col">
-                    <input type="radio" name="mortgage-type" id="interest" />
+                    <input type="radio" name="mortgage-type" id="interest" required />
 
                     Interest Only
                   </label>
                 </div>
+
+                <p id="mortgage-type-error" class="error-message" aria-live="polite">This field is required</p>
               </fieldset>
 
               <button type="submit" class="btn btn-calculate">
