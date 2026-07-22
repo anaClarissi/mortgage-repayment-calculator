@@ -182,6 +182,7 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
+    align-content: baseline;
 }
 
 label,

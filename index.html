@@ -30,21 +30,24 @@
                   <label for="amount">Mortgage Amount</label>
 
                   <div class="input-content reverse">
-                    <input 
-                      type="number" 
-                      name="amount" 
-                      id="amount" 
-                      placeholder="" 
-                      aria-describedby="amount-error" 
+                    <input
+                      type="number"
+                      name="amount"
+                      id="amount"
+                      placeholder=""
+                      aria-describedby="amount-error"
                       aria-invalid="false"
-                      required />
+                      required
+                    />
 
                     <div class="input-symbol">
                       <span>£</span>
                     </div>
                   </div>
 
-                  <p id="amount-error" class="error-message" aria-live="polite">This field is required</p>
+                  <p id="amount-error" class="error-message" aria-live="polite">
+                    This field is required
+                  </p>
                 </div>
               </div>
 
@@ -53,20 +56,27 @@
                   <label for="year-term">Mortgage Term</label>
 
                   <div class="input-content">
-                    <input 
-                      type="number" 
-                      name="year-term" 
-                      id="year-term" 
+                    <input
+                      type="number"
+                      name="year-term"
+                      id="year-term"
                       aria-describedby="year-term-error"
                       aria-invalid="false"
-                      required/>
+                      required
+                    />
 
                     <div class="input-symbol">
                       <span>years</span>
                     </div>
                   </div>
 
-                  <p id="year-term-error" class="error-message" aria-live="polite">This field is required</p>
+                  <p
+                    id="year-term-error"
+                    class="error-message"
+                    aria-live="polite"
+                  >
+                    This field is required
+                  </p>
                 </div>
 
                 <div class="form-col">
@@ -87,7 +97,13 @@
                     </div>
                   </div>
 
-                  <p id="interest-rate-error" class="error-message" aria-live="polite">This field is required</p>
+                  <p
+                    id="interest-rate-error"
+                    class="error-message"
+                    aria-live="polite"
+                  >
+                    This field is required
+                  </p>
                 </div>
               </div>
 
@@ -96,19 +112,37 @@
 
                 <div class="radio-content">
                   <label class="radio-col">
-                    <input type="radio" name="mortgage-type" id="repayment" required />
+                    <input
+                      type="radio"
+                      name="mortgage-type"
+                      id="repayment"
+                      value="repayment"
+                      required
+                    />
 
                     Repayment
                   </label>
 
                   <label class="radio-col">
-                    <input type="radio" name="mortgage-type" id="interest" required />
+                    <input
+                      type="radio"
+                      name="mortgage-type"
+                      id="interest"
+                      value="interest"
+                      required
+                    />
 
                     Interest Only
                   </label>
                 </div>
 
-                <p id="mortgage-type-error" class="error-message" aria-live="polite">This field is required</p>
+                <p
+                  id="mortgage-type-error"
+                  class="error-message"
+                  aria-live="polite"
+                >
+                  This field is required
+                </p>
               </fieldset>
 
               <button type="submit" class="btn btn-calculate">
