@@ -9,6 +9,39 @@ form.addEventListener("submit", () => {
 });
 
 
+function activeResultCompletedPage(monthlyRepayment, totalRepayment) {
+
+    const resultEmptyPage = document.querySelector(".result-empty-container");
+
+    resultEmptyPage.classList.remove("active");
+
+    resultEmptyPage.hidden = true;
+
+
+    const resultCompletedPage = document.querySelector(".result-completed-container");
+
+    resultCompletedPage.classList.add("active");
+
+    resultCompletedPage.hidden = false;
+
+
+    const formatter = new Intl.NumberFormat('en-GB', {
+        style: 'currency',
+        currency: 'GBP'
+    });
+
+
+    const monthlyRepaymentText = document.querySelector(".monthly-repayment");
+
+    const totalRepaymentText = document.querySelector(".total-repayment");
+
+    monthlyRepaymentText.textContent = formatter.format(monthlyRepayment);
+
+    totalRepaymentText.textContent = formatter.format(totalRepayment);
+
+}
+
+
 function calculateMortgageMonth(amountValue, yearTermValue, interestRateValue) {
 
     const mortgageType = document.querySelector('input[name="mortgage-type"]:checked').value;
@@ -79,9 +112,8 @@ function validadeForm() {
 
         const totalRepayment = calculateMortgageYear(amountValue, yearTermValue, interestRateValue);
 
-        console.log(monthlyRepayment);
-
-        console.log(totalRepayment);
+        
+        activeResultCompletedPage(monthlyRepayment, totalRepayment);
 
     }
 
