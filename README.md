@@ -1,110 +1,189 @@
-# Frontend Mentor - Mortgage repayment calculator
+<div align="center">
 
-![Design preview for the Mortgage repayment calculator coding challenge](./preview.jpg)
+# 🏡 Mortgage Repayment Calculator
 
-## Welcome! 👋
+### Um desafio do [Frontend Mentor](https://www.frontendmentor.io) resolvido com HTML, CSS, JavaScript, Sass, Bootstrap, Vite e muito cuidado com acessibilidade.
 
-Thanks for checking out this front-end coding challenge.
+<br />
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
+[![Ver Site](https://img.shields.io/badge/🌐_Ver_Site_ao_Vivo-d7da2f?style=for-the-badge&logoColor=122f3f&labelColor=122f3f&color=d7da2f)](https://mortgage-repayment-calculator-gamma.vercel.app/)
+[![Frontend Mentor](https://img.shields.io/badge/Frontend_Mentor-Desafio-4e6e7e?style=for-the-badge&logo=frontendmentor&logoColor=white)](https://www.frontendmentor.io/challenges/mortgage-repayment-calculator-Galx1LXK73)
+[![Meu Perfil](https://img.shields.io/badge/Meu_Perfil-Frontend_Mentor-122f3f?style=for-the-badge&logo=frontendmentor&logoColor=white)](https://www.frontendmentor.io/profile/anaClarissi)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Ana_Clarissi-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/anaclarissi)
 
-**To do this challenge, you need a basic understanding of HTML, CSS and JavaScript.**
+</div>
 
-## The challenge
+<br />
 
-Your challenge is to build out this mortgage repayment calculator and get it looking as close to the design as possible.
+<div align="center">
+  <img src="./preview.jpg" alt="Preview do Mortgage Repayment Calculator" width="90%" />
+</div>
 
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
+<br />
 
-Your users should be able to: 
+## 📌 Sobre o projeto
 
-- Input mortgage information and see monthly repayment and total repayment amounts after submitting the form
-- See form validation messages if any field is incomplete
-- Complete the form only using their keyboard
-- View the optimal layout for the interface depending on their device's screen size
-- See hover and focus states for all interactive elements on the page
+Este é a minha solução para o desafio **Mortgage Repayment Calculator** do Frontend Mentor: uma calculadora de financiamento imobiliário que permite ao usuário inserir o valor do empréstimo, o prazo em anos, a taxa de juros e o tipo de mortgage (*Repayment* ou *Interest Only*), retornando o valor da parcela mensal e o total pago ao longo do prazo.
 
-### Want some support on the challenge? 
+Mais do que reproduzir o design pixel a pixel, meu foco aqui foi em **construir uma experiência de formulário robusta**: validação sem recarregar a página, mensagens de erro acessíveis para leitores de tela, estados visuais claros de hover/focus/erro, e um cálculo matemático correto por trás dos resultados.
 
-[Join our community](https://www.frontendmentor.io/community) and ask questions in the **#help** channel.
+> 🔗 **Site ao vivo:** [mortgage-repayment-calculator-gamma.vercel.app](https://mortgage-repayment-calculator-gamma.vercel.app/)
 
-## Where to find everything
+<br />
 
-Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design. 
+## 🧭 Sumário
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`. 
+- [Funcionalidades](#-funcionalidades)
+- [Tecnologias utilizadas](#️-tecnologias-utilizadas)
+- [Como o projeto foi construído](#-como-o-projeto-foi-construído)
+- [Acessibilidade](#-acessibilidade)
+- [Estados de interação (hover, focus e erro)](#-estados-de-interação-hover-focus-e-erro)
+- [A fórmula do cálculo](#-a-fórmula-do-cálculo)
+- [Principais aprendizados](#-principais-aprendizados)
+- [Rodando o projeto localmente](#-rodando-o-projeto-localmente)
+- [Autora](#-autora)
 
-If you would like the Figma design file to inspect the design in more detail, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
+<br />
 
-All the required assets for this project are in the `/assets` folder. The images are already exported for the correct screen size and optimized.
+## ✨ Funcionalidades
 
-We also include variable and static font files for the required fonts for this project. You can choose to either link to Google Fonts or use the local font files to host the fonts yourself. Note that we've removed the static font files for the font weights that aren't needed for this project.
+- 📝 Preenchimento do valor do empréstimo, prazo (anos), taxa de juros e tipo de mortgage
+- 🧮 Cálculo em tempo real do **repayment mensal** e do **total pago ao longo do prazo**
+- ⚠️ Validação completa do formulário **sem recarregar a página**, com mensagens de erro específicas para cada campo
+- ♿ Mensagens de erro acessíveis, anunciadas por leitores de tela via `aria-live`
+- 🧹 Botão **Clear All** para resetar o formulário
+- 🎯 Navegação e preenchimento 100% possíveis apenas via teclado
+- 📱 Layout responsivo, adaptado para mobile e desktop
+- 🖱️ Estados visuais de hover, focus e erro em todos os elementos interativos
 
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
+<br />
 
-## Using AI coding assistants
+## 🛠️ Tecnologias utilizadas
 
-We've included two files to help you if you're using AI coding assistants (like Claude, GitHub Copilot, Cursor, etc.) while working on this challenge:
+<div align="center">
 
-- `AGENTS.md` - Contains detailed instructions for AI assistants on how to help you with this challenge. It's tailored to this challenge's difficulty level, so the AI will provide guidance appropriate to your learning stage—offering more support for beginner challenges and encouraging more independence on advanced ones.
-- `CLAUDE.md` - A pointer file that directs Claude-based tools to the AGENTS.md instructions.
+| Tecnologia | Uso no projeto |
+|---|---|
+| ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white) | Estrutura semântica do formulário e da página, com foco em acessibilidade |
+| ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white) | Estilização responsiva, `clamp()` para tipografia fluida, seletores modernos como `:has()` e `:placeholder-shown` |
+| ![Sass](https://img.shields.io/badge/Sass-CC6699?style=flat-square&logo=sass&logoColor=white) | Estrutura de arquivo `_sass.scss` preparada para futuras refatorações e organização em partials |
+| ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black) | Toda a lógica de validação, cálculo do mortgage e manipulação do DOM |
+| ![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=flat-square&logo=bootstrap&logoColor=white) | Utilizado como base de suporte no bundle JS do projeto |
+| ![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white) | Bundler e ambiente de desenvolvimento, com hot reload e build otimizado |
 
-**How to use them:** You don't need to do anything! These files are automatically detected by most AI coding tools. The AI will read them and adjust its behavior to be a better learning partner—guiding you toward solutions rather than just giving you the answers.
+</div>
 
-**Note:** These files are designed to help you *learn*, not to do the work for you. The AI is instructed to ask questions, give hints, and explain concepts rather than writing complete solutions.
+<br />
 
-## Building your project
+## 🏗️ Como o site foi construído
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+O projeto foi organizado em módulos separados por responsabilidade, todos importados a partir de um `main.js` central:
 
-1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+```
+src/
+├── js/
+│   ├── main.js      → ponto de entrada, importa estilos e módulos
+│   └── form.js       → toda a lógica de validação e cálculo do formulário
+├── scss/
+│   └── _sass.scss    → preparado para estilos futuros em Sass
+└── css/
+    └── style.css      → estilos principais do projeto, com variáveis CSS
+```
 
-## Deploying your project
+**Algumas decisões técnicas do processo:**
 
-As mentioned above, there are many ways to host your project for free. Our recommended hosts are:
+- **Variáveis CSS (`:root`)** para toda a paleta de cores e tokens de design, facilitando manutenção e consistência entre os componentes.
+- **`novalidate` no formulário** combinado com validação manual em JavaScript, permitindo controle total sobre quando e como as mensagens de erro aparecem, no lugar dos balões de validação nativos do navegador.
+- **Seletores CSS modernos** como `:has()` para estilizar o container do input com base no estado do input filho (ex: quando ele não está vazio, ou quando está com foco), evitando a necessidade de classes adicionadas via JS só para estilo.
+- **Cálculo isolado em funções puras** (`calculateMortgageMonth` e `calculateMortgageYear`), separando claramente a lógica de negócio da manipulação do DOM.
+- **Vite** como bundler, permitindo importar Sass, CSS e JS de forma modular, com build rápido e otimizado para produção.
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+<br />
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://www.frontendmentor.io/guides/hosting-your-solution).
+## ♿ Acessibilidade
 
-## Create a custom `README.md`
+A acessibilidade foi um dos pontos que mais me dediquei nesse desafio. Entre as decisões tomadas:
 
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
+- Cada input possui `aria-describedby` apontando para sua respectiva mensagem de erro, e `aria-invalid` atualizado dinamicamente conforme a validação.
+- O grupo de radios (*Mortgage Type*) é agrupado semanticamente com `<fieldset>` e `<legend>`, com a mensagem de erro associada ao `fieldset` — já que o erro pertence ao grupo como um todo, e não a um radio individual.
+- As mensagens de erro usam `aria-live="polite"`, garantindo que leitores de tela anunciem o erro sem interromper abruptamente o fluxo do usuário.
+- Toda a seção de resultados usa `aria-live="polite"` para anunciar os valores calculados assim que aparecem.
+- O formulário é 100% navegável e preenchível apenas com o teclado, incluindo estados de `:focus` visíveis em todos os campos, radios e botões.
+- Ícones puramente decorativos (como o do botão de calcular) recebem `alt=""` e `aria-hidden="true"`, para não gerar ruído desnecessário na leitura por leitores de tela.
 
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
+<br />
 
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
+## 🎨 Estados de interação (hover, focus e erro)
 
-## Submitting your solution
+Todos os elementos interativos do formulário possuem estados visuais claros e consistentes:
 
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://www.frontendmentor.io/guides/how-to-submit-solutions) for tips on how to do this.
+- **Hover:** inputs, radios e botões reagem visualmente ao passar o mouse, reforçando que são elementos clicáveis/editáveis.
+- **Focus:** cada campo recebe um `outline` customizado ao ser focado via teclado (Tab), com transições suaves entre os estados, mantendo a navegação por teclado clara e visível em todo momento.
+- **Preenchido:** os campos de valor mudam sutilmente de cor de borda e do símbolo (£, %, years) quando já possuem conteúdo digitado, usando `:has()` + `:placeholder-shown` — sem depender de JavaScript para esse efeito puramente visual.
+- **Erro:** quando um campo é inválido, sua borda e o símbolo mudam para a cor de erro, e a mensagem correspondente aparece logo abaixo, com `role`/`aria-live` garantindo que a informação também chegue a quem usa leitor de tela.
+- **Radio selecionado:** o radio marcado destaca todo o seu container (`.radio-col`) com uma cor de fundo e borda diferenciadas, deixando a seleção óbvia visualmente.
 
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
+<br />
 
-## Sharing your solution
+## 🧮 A fórmula do cálculo
 
-There are multiple places you can share your solution:
+A parte que mais me desafiou tecnicamente foi entender e implementar corretamente a fórmula de amortização de um mortgage do tipo *Repayment*:
 
-1. Share your solution page in the **#finished-projects** channel of our [community](https://www.frontendmentor.io/community). 
-2. Share on [X (formerly Twitter)](https://x.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in your post. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on [LinkedIn](https://www.linkedin.com/company/frontend-mentor/).
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
+```
+M = P × [ r(1+r)ⁿ ] / [ (1+r)ⁿ − 1 ]
+```
 
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback. 
+Onde `M` é o valor da parcela mensal, `P` é o valor principal do empréstimo, `r` é a taxa de juros mensal e `n` é o número total de parcelas. Para o tipo *Interest Only*, o cálculo é mais simples, considerando apenas os juros sobre o principal em cada mês.
 
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
+Para entender a derivação matemática completa por trás dessa fórmula, usei como referência o excelente artigo:
 
-## Got feedback for us?
+📖 [Deriving the Mortgage Payment Formula — jessym.com](https://www.jessym.com/articles/deriving-the-mortgage-payment-formula)
 
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
+<br />
 
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
+## 💡 Principais aprendizados
 
-**Have fun building!** 🚀
+- Aprofundamento em **seletores CSS modernos** (`:has()`, `:placeholder-shown`) para resolver problemas de estilo que antes eu resolveria só com JavaScript.
+- Entendimento mais sólido sobre **acessibilidade em formulários**: a diferença entre `aria-live="polite"` e `role="alert"`, como agrupar corretamente inputs relacionados com `fieldset`/`legend`, e como associar mensagens de erro aos campos corretos.
+- Prática de **validação de formulário manual**, sem depender da validação nativa do navegador, mantendo controle total sobre UX e mensagens customizadas.
+- Aplicação de uma **fórmula financeira real** em JavaScript, incluindo o cuidado de converter taxas anuais para mensais corretamente.
+- Organização de um projeto **modular com Vite**, separando responsabilidades entre HTML, CSS, Sass e JS de forma limpa.
+
+<br />
+
+## 🚀 Rodando o projeto localmente
+
+```bash
+# Clone o repositório
+git clone https://github.com/anaClarissi/mortgage-repayment-calculator
+
+# Acesse a pasta do projeto
+cd mortgage-repayment-calculator
+
+# Instale as dependências
+npm install
+
+# Rode o projeto em ambiente de desenvolvimento
+npm run dev
+```
+
+<br />
+
+## 👩‍💻 Autora
+
+<div align="center">
+
+**Ana Clarissi**
+
+[![Frontend Mentor](https://img.shields.io/badge/Frontend_Mentor-@anaClarissi-4e6e7e?style=for-the-badge&logo=frontendmentor&logoColor=white)](https://www.frontendmentor.io/profile/anaClarissi)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-anaclarissi-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/anaclarissi)
+
+</div>
+
+<br />
+
+<div align="center">
+
+Feito com 💛 e muita atenção aos detalhes.
+
+</div>
