@@ -477,6 +477,34 @@ input[type="radio"]:focus {
 }
 
 /*================================*/
+/*    ---- ACCESSIBILITY ----     */
+/*================================*/
+
+@media (prefers-reduced-motion: reduce) {
+    
+    /*========================*/
+    /*          FORM          */
+    /*========================*/
+
+    .input-content, .radio-col {
+        transition: none;
+    }
+
+    .radio-col {
+        transition: none;
+    }
+
+    input[type="radio"] {
+        transition: none;
+    }
+
+    input[type="radio"]::before {
+        transition: none;
+    }
+
+}
+
+/*================================*/
 /*        ---- DESKTOP ----       */
 /*================================*/
 
